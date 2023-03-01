@@ -1,14 +1,13 @@
-const convertToICS = (event) => {
-    const start = new Date(event.start);
-    const end = new Date(event.end);
+const moment = require('moment-timezone');
 
+const convertToICS = (event) => {
     return {
         uid: event.codemodule + "-" + event.codeinstance + "-" + event.codeacti + "-" + event.codeevent,
         title: event.acti_title,
         location: event.room?.code.split("/")[3] || "Unknown",
         url: "https://intra.epitech.eu/module/" + event.scolaryear + "/" + event.codemodule + "/" + event.codeinstance + "/" + event.codeacti,
-        start: [start.getFullYear(), start.getMonth() + 1, start.getDate(), start.getHours(), start.getMinutes()],
-        end: [end.getFullYear(), end.getMonth() + 1, end.getDate(), end.getHours(), end.getMinutes()],
+        start: moment.tz(event.start, process.env.TZ || "Europe/Paris").utc().format('YYYY-M-D-H-m').split("-").map(val => parseInt(val)),
+        end: moment.tz(event.start, process.env.TZ || "Europe/Paris").utc().format('YYYY-M-D-H-m').split("-").map(val => parseInt(val)),
         status: 'CONFIRMED',
         busyStatus: 'BUSY',
     }
