@@ -33,6 +33,10 @@ Where:
 - `EPITECH_AUTOLOGIN_LINK` is the link to your Epitech Intranet autologin page
 - `EMAIL_LIST` is a list of emails separated by a semicolon (`;`) that will receive the calendar sync report
 
+Then you can access the web interface at `http://localhost:3000`.
+
+You just have to add a new calendar on outlook and set the URL to `http://localhost:3000/feed`
+
 ## Credits
 
 - [madfish5415](https://github.com/madfish5415)
