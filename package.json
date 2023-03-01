@@ -1,0 +1,26 @@
+{
+  "name": "epitech-intranet-calendar-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Madfish5415/epitech-intranet-calendar-sync.git"
+  },
+  "author": "Lucas Mathieux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Madfish5415/epitech-intranet-calendar-sync/issues"
+  },
+  "homepage": "https://github.com/Madfish5415/epitech-intranet-calendar-sync#readme",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "cron": "^2.2.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "ics-service": "^1.2.3"
+  }
+}
