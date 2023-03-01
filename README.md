@@ -25,6 +25,7 @@ docker run -d \
     --name epitech-intranet-calendar-sync \
     -e EPITECH_AUTOLOGIN_LINK="login_link" \
     -e EMAIL_LIST="john.doe@example.com;john.doe@example.fr"
+    -e TZ="Europe/Paris" \
     -p 3000:3000 \
     madfish5415/epitech-intranet-calendar-sync
 ```
@@ -32,6 +33,7 @@ docker run -d \
 Where:
 - `EPITECH_AUTOLOGIN_LINK` is the link to your Epitech Intranet autologin page
 - `EMAIL_LIST` is a list of emails separated by a semicolon (`;`) that will receive the calendar sync report
+- `TZ` is the timezone of the container (default: `Europe/Paris`)
 
 Then you can access the web interface at `http://localhost:3000`.
 
