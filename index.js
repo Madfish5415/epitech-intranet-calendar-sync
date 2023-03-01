@@ -14,10 +14,12 @@ let EVENTS_LIST = [];
 
 getEvents().then((events) => {
     const e = [];
+    console.log(events);
     for (let event of events) {
         e.push(convertToICS(event));
     }
     EVENTS_LIST = e;
+    console.log(EVENTS_LIST);
     console.log("Done");
 }).catch();
 

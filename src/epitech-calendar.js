@@ -36,7 +36,16 @@ async function filter(arr, callback) {
 async function getEvents() {
     await login()
 
-    const events = (await retrieveEvents("2023-02-27", "2023-03-03")).data;
+    const start = new Date();
+    start.setDate(start.getDate()-5);
+    const end = new Date();
+    end.setDate(end.getDate()+14);
+
+    console.log("start: " + start.toISOString().split('T')[0]);
+    console.log("start: " + end.toISOString().split('T')[0]);
+
+
+    const events = (await retrieveEvents((start.toISOString().split('T')[0]), end.toISOString().split('T')[0])).data;
 
     return await filter(events, async (event) => {
         if (event.calendar_type === 'perso')
